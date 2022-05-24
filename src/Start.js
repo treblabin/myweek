@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Start = (props) => {
+  const [count, setCount] = React.useState(0);
   const star_count = Array.from({ length: 7 }, (v, i) =>
     Math.floor(Math.random() * 5 + 1)
   );
@@ -27,6 +28,9 @@ const Start = (props) => {
   const sun_count = Array.from({ length: 5 }, (v, i) =>
     star_count[6] > i ? 1 : 0
   );
+  const ResetStar = () => {
+    setCount(count + 1);
+  };
 
   return (
     <>
@@ -45,7 +49,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/mon"
               style={{
                 width: "0px",
                 height: "0px",
@@ -67,7 +71,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/tue"
               style={{
                 width: "0px",
                 height: "0px",
@@ -89,7 +93,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/wed"
               style={{
                 width: "0px",
                 height: "0px",
@@ -111,7 +115,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/thu"
               style={{
                 width: "0px",
                 height: "0px",
@@ -133,7 +137,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/fri"
               style={{
                 width: "0px",
                 height: "0px",
@@ -155,7 +159,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/sat"
               style={{
                 width: "0px",
                 height: "0px",
@@ -177,7 +181,7 @@ const Start = (props) => {
               })}
             </Circles>
             <Link
-              to="day/:dayName"
+              to="day/sun"
               style={{
                 width: "0px",
                 height: "0px",
@@ -194,7 +198,7 @@ const Start = (props) => {
             <br />
             {(star_count.reduce((a, c) => a + c, 0) / 7).toFixed(1)}
           </AverageArea>
-          <ResetBtn>Reset</ResetBtn>
+          <ResetBtn onClick={ResetStar}>Reset</ResetBtn>
         </BottomCover>
       </TotalCover>
     </>
