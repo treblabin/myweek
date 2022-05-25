@@ -31,166 +31,177 @@ const Start = (props) => {
   const ResetStar = () => {
     setCount(count + 1);
   };
+  const current = new window.Date().getDay();
+
+  const mycode = [
+    <DayCover key="sun">
+      <Date>일</Date>
+      <Circles>
+        {sun_count.map((n, i) => {
+          return sun_count[i] === 1 ? (
+            <YellowCircle key={i + "SU"} />
+          ) : (
+            <GrayCircle key={i + "SU"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/sun"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="mon">
+      <Date>월</Date>
+      <Circles>
+        {mon_count.map((n, i) => {
+          return mon_count[i] === 1 ? (
+            <YellowCircle key={i + "M"} />
+          ) : (
+            <GrayCircle key={i + "M"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/mon"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="tue">
+      <Date>화</Date>
+      <Circles>
+        {tue_count.map((n, i) => {
+          return tue_count[i] === 1 ? (
+            <YellowCircle key={i + "T"} />
+          ) : (
+            <GrayCircle key={i + "T"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/tue"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="wed">
+      <Date>수</Date>
+      <Circles>
+        {wed_count.map((n, i) => {
+          return wed_count[i] === 1 ? (
+            <YellowCircle key={i + "W"} />
+          ) : (
+            <GrayCircle key={i + "W"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/wed"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="thu">
+      <Date>목</Date>
+      <Circles>
+        {thu_count.map((n, i) => {
+          return thu_count[i] === 1 ? (
+            <YellowCircle key={i + "TH"} />
+          ) : (
+            <GrayCircle key={i + "TH"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/thu"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="fri">
+      <Date>금</Date>
+      <Circles>
+        {fri_count.map((n, i) => {
+          return fri_count[i] === 1 ? (
+            <YellowCircle key={i + "F"} />
+          ) : (
+            <GrayCircle key={i + "F"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/fri"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+    <DayCover key="sat">
+      <Date>토</Date>
+      <Circles>
+        {sat_count.map((n, i) => {
+          return sat_count[i] === 1 ? (
+            <YellowCircle key={i + "S"} />
+          ) : (
+            <GrayCircle key={i + "S"} />
+          );
+        })}
+      </Circles>
+      <Link
+        to="day/sat"
+        style={{
+          width: "0px",
+          height: "0px",
+          borderTop: "15px solid transparent",
+          borderBottom: "15px solid transparent",
+          borderLeft: "20px solid purple",
+        }}
+      />
+    </DayCover>,
+  ];
 
   return (
     <MyCover>
       <TotalCover>
         <Title>내 일주일은?</Title>
         <WeekCover>
-          <DayCover>
-            <Date>월</Date>
-            <Circles>
-              {mon_count.map((n, i) => {
-                return mon_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
-                ) : (
-                  <GrayCircle key={i + "M"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/mon"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>화</Date>
-            <Circles>
-              {tue_count.map((n, i) => {
-                return tue_count[i] === 1 ? (
-                  <YellowCircle key={i + "T"} />
-                ) : (
-                  <GrayCircle key={i + "T"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/tue"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>수</Date>
-            <Circles>
-              {wed_count.map((n, i) => {
-                return wed_count[i] === 1 ? (
-                  <YellowCircle key={i + "W"} />
-                ) : (
-                  <GrayCircle key={i + "W"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/wed"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>목</Date>
-            <Circles>
-              {thu_count.map((n, i) => {
-                return thu_count[i] === 1 ? (
-                  <YellowCircle key={i + "TH"} />
-                ) : (
-                  <GrayCircle key={i + "TH"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/thu"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>금</Date>
-            <Circles>
-              {fri_count.map((n, i) => {
-                return fri_count[i] === 1 ? (
-                  <YellowCircle key={i + "F"} />
-                ) : (
-                  <GrayCircle key={i + "F"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/fri"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>토</Date>
-            <Circles>
-              {sat_count.map((n, i) => {
-                return sat_count[i] === 1 ? (
-                  <YellowCircle key={i + "S"} />
-                ) : (
-                  <GrayCircle key={i + "S"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/sat"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
-          <DayCover>
-            <Date>일</Date>
-            <Circles>
-              {sun_count.map((n, i) => {
-                return sun_count[i] === 1 ? (
-                  <YellowCircle key={i + "SU"} />
-                ) : (
-                  <GrayCircle key={i + "SU"} />
-                );
-              })}
-            </Circles>
-            <Link
-              to="day/sun"
-              style={{
-                width: "0px",
-                height: "0px",
-                borderTop: "15px solid transparent",
-                borderBottom: "15px solid transparent",
-                borderLeft: "20px solid purple",
-              }}
-            />
-          </DayCover>
+          {mycode[current]}
+          {mycode[(current + 1) % 7]}
+          {mycode[(current + 2) % 7]}
+          {mycode[(current + 3) % 7]}
+          {mycode[(current + 4) % 7]}
+          {mycode[(current + 5) % 7]}
+          {mycode[(current + 6) % 7]}
         </WeekCover>
         <BottomCover>
           <AverageArea>
