@@ -276,7 +276,9 @@ const ResetBtn = styled.button`
   border-width: 0px;
   border-radius: 10px;
   width: 30%;
-  height: 50px;
+  height: 60px;
+  font-weight: bold;
+  font-size: 15pt;
 `;
 
 export default Start;
