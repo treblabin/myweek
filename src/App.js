@@ -7,11 +7,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="day/:dayName">Day</Link>
-        </nav>
-
         <Routes>
           <Route path="/" element={<Start />} />
           <Route path="day/:dayName" element={<Day />} />

@@ -63,10 +63,10 @@ const Start = (props) => {
             <Date>화</Date>
             <Circles>
               {tue_count.map((n, i) => {
-                return mon_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                return tue_count[i] === 1 ? (
+                  <YellowCircle key={i + "T"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "T"} />
                 );
               })}
             </Circles>
@@ -86,9 +86,9 @@ const Start = (props) => {
             <Circles>
               {wed_count.map((n, i) => {
                 return wed_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                  <YellowCircle key={i + "W"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "W"} />
                 );
               })}
             </Circles>
@@ -108,9 +108,9 @@ const Start = (props) => {
             <Circles>
               {thu_count.map((n, i) => {
                 return thu_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                  <YellowCircle key={i + "TH"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "TH"} />
                 );
               })}
             </Circles>
@@ -130,9 +130,9 @@ const Start = (props) => {
             <Circles>
               {fri_count.map((n, i) => {
                 return fri_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                  <YellowCircle key={i + "F"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "F"} />
                 );
               })}
             </Circles>
@@ -152,9 +152,9 @@ const Start = (props) => {
             <Circles>
               {sat_count.map((n, i) => {
                 return sat_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                  <YellowCircle key={i + "S"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "S"} />
                 );
               })}
             </Circles>
@@ -174,9 +174,9 @@ const Start = (props) => {
             <Circles>
               {sun_count.map((n, i) => {
                 return sun_count[i] === 1 ? (
-                  <YellowCircle key={i + "M"} />
+                  <YellowCircle key={i + "SU"} />
                 ) : (
-                  <GrayCircle key={i + "M"} />
+                  <GrayCircle key={i + "SU"} />
                 );
               })}
             </Circles>
@@ -215,8 +215,9 @@ const TotalCover = styled.div`
   margin: 0px auto;
 `;
 
-const Title = styled.h1`
+const Title = styled.h3`
   text-align: center;
+  margin-top: 10vh;
 `;
 
 const WeekCover = styled.div``;
@@ -247,7 +248,7 @@ const YellowCircle = styled.div`
 `;
 
 const GrayCircle = styled.div`
-  background-color: gray;
+  background-color: #ddd;
   width: 30px;
   height: 30px;
   border-radius: 30px;
