@@ -33,7 +33,7 @@ const Start = (props) => {
   };
 
   return (
-    <>
+    <MyCover>
       <TotalCover>
         <Title>내 일주일은?</Title>
         <WeekCover>
@@ -201,18 +201,26 @@ const Start = (props) => {
           <ResetBtn onClick={ResetStar}>Reset</ResetBtn>
         </BottomCover>
       </TotalCover>
-    </>
+    </MyCover>
   );
 };
 
+const MyCover = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const TotalCover = styled.div`
   border-radius: 5px;
-  border-color: #eee;
+  border-color: #ddd;
   border-width: 1px;
-  margin-top: 10vh;
   height: 90vh;
-  width: 30vw;
+  width: 80vw;
+  max-width: 350px;
   margin: 0px auto;
+  border-style: solid;
 `;
 
 const Title = styled.h3`

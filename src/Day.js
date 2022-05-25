@@ -13,9 +13,12 @@ function Day(props) {
   const onClickHandler = (i) => {
     setCount(i + 1);
   };
-  console.log(real_date);
+
+  window.onkeydown = (e) =>
+    e.key === 1 || 2 || 3 || 4 || 5 ? setCount(e.key) : 0;
+
   return (
-    <>
+    <MyCover>
       <FullCover>
         <TitleCover>
           <TitleStar1>{real_date}요일</TitleStar1>
@@ -39,20 +42,29 @@ function Day(props) {
           <LinkButton>평점 남기기</LinkButton>
         </Link>
       </FullCover>
-    </>
+    </MyCover>
   );
 }
 
+const MyCover = styled.div`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const FullCover = styled.div`
   border-radius: 5px;
-  border-color: gray;
+  border-color: #ddd;
   border-width: 1px;
   margin-top: 10vh;
   height: 90vh;
-  width: 30vw;
+  width: 80vw;
+  max-width: 350px;
   margin: 0px auto;
   display: flex;
   flex-direction: column;
+  border-style: solid;
 `;
 
 const TitleCover = styled.div`
