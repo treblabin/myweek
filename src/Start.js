@@ -29,8 +29,9 @@ const Start = (props) => {
     star_count[6] > i ? 1 : 0
   );
   const ResetStar = () => {
-    setCount(count + 1);
+    return count === 1 ? 0 : setCount(count + 1);
   };
+
   const current = new window.Date().getDay();
 
   const mycode = [
@@ -207,7 +208,9 @@ const Start = (props) => {
           <AverageArea>
             평균 평점
             <br />
-            {(star_count.reduce((a, c) => a + c, 0) / 7).toFixed(1)}
+            {count === 1
+              ? 0
+              : (star_count.reduce((a, c) => a + c, 0) / 7).toFixed(1)}
           </AverageArea>
           <ResetBtn onClick={ResetStar}>Reset</ResetBtn>
         </BottomCover>
