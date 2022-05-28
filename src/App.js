@@ -8,7 +8,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<Start />} />
+          <Route path="/" element={<Start />} />
           <Route path="day/:dayName" element={<Day />} />
         </Routes>
       </BrowserRouter>
